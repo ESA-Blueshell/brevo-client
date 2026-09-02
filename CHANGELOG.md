@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/ESA-Blueshell/brevo-client/compare/v0.2.1...v0.2.2) (2026-09-02)
+
+
+### Build and Dependencies
+
+* **deps:** Bump the gradle group in /kotlin with 5 updates ([#2](https://github.com/ESA-Blueshell/brevo-client/issues/2)) ([3a408dc](https://github.com/ESA-Blueshell/brevo-client/commit/3a408dc2b795bf785af9edb5f2b3c6d82e2841a4))
+
 ## [0.2.1](https://github.com/ESA-Blueshell/brevo-client/compare/v0.2.0...v0.2.1) (2026-09-02)
 
 
