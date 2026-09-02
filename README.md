@@ -99,14 +99,24 @@ Errors surface as `RestClientResponseException`, which carries the status code.
 > [!TIP]
 > Use `BrevoClient.create(...)`, not the generated `TransactionalEmailsApi`
 > constructor directly. The generated class knows nothing about Brevo's
-> `api-key` scheme, and its convenience constructor registers a JSON converter
-> *behind* Spring's own — so it authenticates with nothing and sends an explicit
-> `null` for every field you did not set. Brevo reads a null on several fields
-> as a value rather than as absence. `BrevoClient` fixes both.
+> `api-key` scheme, so it authenticates with nothing. `BrevoClient` supplies
+> the header and configures the generated object mapper, whose `NON_ABSENT`
+> inclusion keeps unset fields out of the request — Brevo reads a null on
+> several fields as a value rather than as absence.
 >
 > `BrevoClient.using(restClient)` wraps a `RestClient` you have configured
 > yourself, if your application routes all outbound calls through its own
 > builder.
+
+### Jackson
+
+Both clients are generated against **Jackson 3** (`tools.jackson.*`) and Spring
+Boot 4, matching ESA-Blueshell/website. Only the annotations remain on the
+Jackson 2 coordinate (`com.fasterxml.jackson.annotation`), which is where
+Jackson 3 left them; their version comes from the Jackson 3 BOM.
+
+A consumer on Jackson 3 can therefore share one mapper stack with this client
+instead of carrying two Jackson majors on the classpath.
 
 ## How it stays current
 
