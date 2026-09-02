@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.1](https://github.com/ESA-Blueshell/brevo-client/compare/v0.2.0...v0.2.1) (2026-09-02)
+
+
+### Bug Fixes
+
+* **ci:** take the release pull request number from release-please ([#14](https://github.com/ESA-Blueshell/brevo-client/issues/14)) ([5902f9f](https://github.com/ESA-Blueshell/brevo-client/commit/5902f9ff1d00cdc9d9a64178ab76b7821164990e))
+
+
+### Documentation
+
+* describe the unattended release chain and its one gap ([#12](https://github.com/ESA-Blueshell/brevo-client/issues/12)) ([fdf4e58](https://github.com/ESA-Blueshell/brevo-client/commit/fdf4e5831996d8367d3e3035afd27ebdd097e844))
+
 ## [0.2.0](https://github.com/ESA-Blueshell/brevo-client/compare/v0.1.0...v0.2.0) (2026-09-02)
 
 
