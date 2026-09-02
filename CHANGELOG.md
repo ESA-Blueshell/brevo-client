@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/ESA-Blueshell/brevo-client/compare/v1.0.1...v1.0.2) (2026-09-02)
+
+
+### Bug Fixes
+
+* **typescript:** make the built package loadable as ESM ([#30](https://github.com/ESA-Blueshell/brevo-client/issues/30)) ([93f05aa](https://github.com/ESA-Blueshell/brevo-client/commit/93f05aa1d8a59c29803bd357cb993a53ea601393))
+
 ## [1.0.1](https://github.com/ESA-Blueshell/brevo-client/compare/v1.0.0...v1.0.1) (2026-09-02)
 
 
