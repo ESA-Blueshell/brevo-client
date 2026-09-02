@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/ESA-Blueshell/brevo-client/compare/v0.2.2...v0.2.3) (2026-09-02)
+
+
+### Build and Dependencies
+
+* **deps-dev:** bump @types/node from 24.9.2 to 26.3.0 in /typescript ([#6](https://github.com/ESA-Blueshell/brevo-client/issues/6)) ([6e0c7d8](https://github.com/ESA-Blueshell/brevo-client/commit/6e0c7d827d4561659d289fb53dd5e49c9c8a9c39))
+
 ## [0.2.2](https://github.com/ESA-Blueshell/brevo-client/compare/v0.2.1...v0.2.2) (2026-09-02)
 
 
