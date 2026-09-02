@@ -4,7 +4,7 @@ import net.blueshell.clients.brevo.api.ContactsApi
 import net.blueshell.clients.brevo.api.TransactionalEmailsApi
 import net.blueshell.clients.brevo.infrastructure.Serializer
 import org.springframework.http.MediaType
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter
 import org.springframework.web.client.RestClient
 
 /**
@@ -55,20 +55,15 @@ class BrevoClient private constructor(restClient: RestClient) {
                 .baseUrl(baseUrl)
                 .defaultHeader(API_KEY_HEADER, apiKey)
                 .defaultHeader("Accept", MediaType.APPLICATION_JSON_VALUE)
-                // The generated Serializer's mapper, not a default one, and
-                // inserted at the FRONT of the converter list.
-                //
-                // Two separate traps here. First, that mapper sets NON_ABSENT
-                // serialisation inclusion, so an unset field is omitted rather
-                // than sent as an explicit null — behavioural for Brevo, which
-                // reads a null on several fields as a value rather than as
-                // absence. Second, `messageConverters { it.add(...) }` appends,
-                // and RestClient uses the first converter that can write the
-                // type: appending leaves Spring's own default JSON converter in
-                // front, so the custom mapper is registered and never consulted.
-                // The generated API class's convenience constructor appends, and
-                // does send a null for every unset field.
-                .messageConverters { it.add(0, MappingJackson2HttpMessageConverter(Serializer.jacksonObjectMapper)) }
+                // The generated Serializer's mapper, and `withJsonConverter`
+                // so it replaces the default JSON converter rather than sitting
+                // behind it. That mapper sets NON_ABSENT inclusion, so an unset
+                // field is omitted rather than sent as an explicit null —
+                // behavioural for Brevo, which reads a null on several fields as
+                // a value rather than as absence.
+                .configureMessageConverters {
+                    it.registerDefaults().withJsonConverter(JacksonJsonHttpMessageConverter(Serializer.jacksonObjectMapper))
+                }
 
             // Set only when present. An empty `partner-key` is not the same as
             // no `partner-key`: Brevo rejects the former on non-partner accounts.
