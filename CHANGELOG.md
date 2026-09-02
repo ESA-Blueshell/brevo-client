@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/ESA-Blueshell/brevo-client/compare/v1.0.0...v1.0.1) (2026-09-02)
+
+
+### Bug Fixes
+
+* **ci:** repair CodeQL and read the version from a ref that may predate the task ([#29](https://github.com/ESA-Blueshell/brevo-client/issues/29)) ([5bbbdf4](https://github.com/ESA-Blueshell/brevo-client/commit/5bbbdf498ae2bf2da9c51f9e460792778f6da11d))
+* stop publishing artefacts named "0.2.x # x-release-please-version" ([#27](https://github.com/ESA-Blueshell/brevo-client/issues/27)) ([b01cad2](https://github.com/ESA-Blueshell/brevo-client/commit/b01cad2b8ed06d7bba995853b42c46114e1c14a4))
+
 ## [1.0.0](https://github.com/ESA-Blueshell/brevo-client/compare/v0.2.4...v1.0.0) (2026-09-02)
 
 
