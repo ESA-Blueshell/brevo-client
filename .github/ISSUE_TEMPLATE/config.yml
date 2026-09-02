@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Upstream Brevo API problem
+    url: https://github.com/brevo/brevo-openapi/issues
+    about: Wrong or missing behaviour in the Brevo API itself, rather than in this client.

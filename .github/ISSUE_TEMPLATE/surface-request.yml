@@ -1,0 +1,30 @@
+name: Request a tag
+description: Ask for a group of Brevo operations this client does not yet expose.
+title: 'feat(spec): expose the  tag'
+labels: [enhancement, spec-surface]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This client exposes operations by **Brevo tag**, listed in
+        [`specs/surface.json`](../blob/main/specs/surface.json). Today that is
+        `Transactional emails` and `Contacts` — 52 operations.
+
+        Adding a tag pulls in every operation Brevo files under it, and is a
+        **minor** release. Use Brevo's raw tag string, spaces and casing
+        included: `Transactional emails`, not `TransactionalEmails`.
+  - type: input
+    id: tag
+    attributes:
+      label: Brevo tag
+      description: Exactly as it appears in Brevo's OpenAPI document.
+      placeholder: Email Campaigns
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What needs it
+      description: Which application or feature will call these, and for what.
+    validations:
+      required: true

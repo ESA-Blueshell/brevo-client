@@ -1,0 +1,9 @@
+{
+  "$comment": "The consumed surface: the only part of the upstream Brevo API this client exposes, and therefore the contract its version numbers describe. Brevo tags its operations, so the surface is declared by tag rather than by path. NOTE the tag strings are Brevo's raw tags, spaces and casing included — openapi-generator normalises 'Transactional emails' into a TransactionalEmailsApi class, and using that normalised form here matches nothing. Adding a tag is a minor release; removing one is a major release. Edit this file, then run `npm --prefix tools run sync`.",
+  "apiName": "Brevo",
+  "upstreamUrl": "https://api.brevo.com/v3/swagger_definition_v3.yml",
+  "specFile": "brevo.json",
+  "lockFile": "brevo.upstream.lock.json",
+  "majorAtLevel": 2,
+  "tags": ["Transactional emails", "Contacts"]
+}
