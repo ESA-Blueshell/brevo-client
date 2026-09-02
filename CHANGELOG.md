@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/ESA-Blueshell/brevo-client/compare/v0.2.3...v0.2.4) (2026-09-02)
+
+
+### Build and Dependencies
+
+* **deps:** bump the actions group with 4 updates ([#7](https://github.com/ESA-Blueshell/brevo-client/issues/7)) ([3d6fefc](https://github.com/ESA-Blueshell/brevo-client/commit/3d6fefc59cc062fd3ece6a59a9187283cd308fb1))
+
 ## [0.2.3](https://github.com/ESA-Blueshell/brevo-client/compare/v0.2.2...v0.2.3) (2026-09-02)
 
 
