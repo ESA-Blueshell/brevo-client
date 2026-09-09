@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/ESA-Blueshell/brevo-client/compare/v1.0.2...v1.0.3) (2026-09-09)
+
+
+### Build and Dependencies
+
+* **deps:** bump actions/setup-node from 6.0.0 to 7.0.0 ([#36](https://github.com/ESA-Blueshell/brevo-client/issues/36)) ([18f54bc](https://github.com/ESA-Blueshell/brevo-client/commit/18f54bcd78b197de9745bb496b18c36468e37d2d))
+
 ## [1.0.2](https://github.com/ESA-Blueshell/brevo-client/compare/v1.0.1...v1.0.2) (2026-09-02)
 
 
