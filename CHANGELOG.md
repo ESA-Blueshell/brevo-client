@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/ESA-Blueshell/brevo-client/compare/v1.0.3...v1.0.4) (2026-09-09)
+
+
+### Build and Dependencies
+
+* **deps:** bump tools.jackson:jackson-bom from 3.1.0 to 3.2.2 in /kotlin in the gradle group ([#33](https://github.com/ESA-Blueshell/brevo-client/issues/33)) ([334cfcb](https://github.com/ESA-Blueshell/brevo-client/commit/334cfcbf3ca4eeaf40be97ac1d2a612cd22141bb))
+
 ## [1.0.3](https://github.com/ESA-Blueshell/brevo-client/compare/v1.0.2...v1.0.3) (2026-09-09)
 
 
