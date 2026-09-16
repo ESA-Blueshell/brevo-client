@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/ESA-Blueshell/brevo-client/compare/v1.0.5...v1.0.6) (2026-09-16)
+
+
+### Build and Dependencies
+
+* **deps:** renovate replaces dependabot here too ([#44](https://github.com/ESA-Blueshell/brevo-client/issues/44)) ([bf1fdc4](https://github.com/ESA-Blueshell/brevo-client/commit/bf1fdc430271e42ac73b8288a9f9dee70ee94799))
+
 ## [1.0.5](https://github.com/ESA-Blueshell/brevo-client/compare/v1.0.4...v1.0.5) (2026-09-16)
 
 
