@@ -137,9 +137,10 @@ release-please cut the version and publish.
 > default `GITHUB_TOKEN`, so the nightly and release pull requests show no
 > checks out of the box. The sync job builds and tests both clients *before*
 > opening the PR, so nothing ships unverified — the evidence is in the workflow
-> run. To get checks on the PR itself, add an `AUTOMATION_TOKEN` secret (a PAT
-> or GitHub App token with `contents` and `pull-requests` write); both
-> workflows pick it up automatically and fall back to the default token.
+> run. With the `blueshell-release` app's `RELEASE_APP_ID` and
+> `RELEASE_APP_PRIVATE_KEY` secrets set, both workflows mint the app's token
+> instead: the pull requests then show checks, and a merged release publishes
+> on its own. Without them they fall back to the default token.
 
 See [docs/versioning.md](docs/versioning.md) for why the surface is filtered
 before it is classified, and why the tag strings must be Brevo's raw tags.
