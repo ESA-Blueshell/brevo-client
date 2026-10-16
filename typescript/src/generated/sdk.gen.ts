@@ -146,6 +146,8 @@ export const createDoiContact = <ThrowOnError extends boolean = false>(options: 
  * Export contacts
  *
  * It returns the background process ID which on completion calls the notify URL that you have set in the input. File will be available in csv.
+ *
+ * When no contact matches the filter, no export process is created: the endpoint answers `200` with an empty object instead of `202` with a processId. A recurring export should treat that as "nothing to do" rather than as a failure, and must not assume a processId is always present.
  */
 export const requestContactExport = <ThrowOnError extends boolean = false>(options: Options<RequestContactExportData, ThrowOnError>): RequestResult<RequestContactExportResponses, RequestContactExportErrors, ThrowOnError> => (options.client ?? client).post<RequestContactExportResponses, RequestContactExportErrors, ThrowOnError>({
     responseType: 'json',

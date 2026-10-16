@@ -1072,7 +1072,9 @@ export type RequestContactExportData = {
          */
         customContactFilter: {
             /**
-             * **Mandatory if neither actionForEmailCampaigns nor actionForSmsCampaigns is passed.** This will export the contacts on the basis of provided action applied on contacts as per the list id. * **allContacts** - Fetch the list of all contacts for a particular list. * **subscribed & unsubscribed** - Fetch the list of subscribed / unsubscribed (blacklisted via any means) contacts for a particular list. * **unsubscribedPerList** - Fetch the list of contacts that are unsubscribed from a particular list only.
+             * **Mandatory if neither actionForEmailCampaigns nor actionForSmsCampaigns is passed.** This will export the contacts on the basis of the provided action, restricted to the contacts selected by the other filters below. * **allContacts** - Fetch all the selected contacts. * **subscribed & unsubscribed** - Fetch the subscribed / unsubscribed (blacklisted via any means) contacts among the selected contacts. * **unsubscribedPerList** - Fetch the contacts that are unsubscribed from the given listId only; this action requires listId.
+             *
+             * The selection must be narrowed by at least one of **listId**, **segmentId**, **modifiedSince** or **createdSince**. Any of them can be combined with the action, so for example `unsubscribed` together with `modifiedSince` exports the contacts that are currently blocklisted and were modified after the given date-time, with no list or segment involved.
              *
              */
             actionForContacts?: 'allContacts' | 'subscribed' | 'unsubscribed' | 'unsubscribedPerList';
@@ -1087,17 +1089,27 @@ export type RequestContactExportData = {
              */
             actionForSmsCampaigns?: 'hardBounces' | 'softBounces' | 'unsubscribed';
             /**
+             * Considered only if **actionForContacts** is passed, ignored otherwise. Exports only the contacts created after the given date-time. The value must be a full RFC 3339 date-time: a date-only value such as `2026-10-01` is rejected, and so is a value without a timezone, so pass either the `Z` suffix or an explicit `+HH:MM` offset.
+             *
+             */
+            createdSince?: string;
+            /**
              * Considered only if **actionForEmailCampaigns** is passed, ignored otherwise. **Mandatory if action is one of the following - openers, nonOpeners, clickers, nonClickers, unsubscribed.** The id of the email campaign for which the corresponding action shall be applied in the filter.
              *
              */
             emailCampaignId?: number;
             /**
-             * ID of the list. This is mandatory if actionForContacts is specified and segmentId is not provided. Either segmentId or listId must be included.
+             * ID of the list. Considered only if **actionForContacts** is passed. At least one of listId, segmentId, modifiedSince or createdSince must be provided; listId and segmentId cannot be used together.
              *
              */
             listId?: number;
             /**
-             * ID of the segment. This is mandatory if actionForContacts is specified and listId is not provided. Either segmentId or listId must be included.
+             * Considered only if **actionForContacts** is passed, ignored otherwise. Exports only the contacts modified after the given date-time. The value must be a full RFC 3339 date-time: a date-only value such as `2026-10-01` is rejected, and so is a value without a timezone, so pass either the `Z` suffix or an explicit `+HH:MM` offset. Note that a contact's modification date changes on any update, not only on a subscription change.
+             *
+             */
+            modifiedSince?: string;
+            /**
+             * ID of the segment. Considered only if **actionForContacts** is passed. At least one of listId, segmentId, modifiedSince or createdSince must be provided; listId and segmentId cannot be used together.
              *
              */
             segmentId?: number;

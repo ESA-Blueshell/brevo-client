@@ -2021,7 +2021,7 @@
     },
     "/contacts/export": {
       "post": {
-        "description": "It returns the background process ID which on completion calls the notify URL that you have set in the input. File will be available in csv.",
+        "description": "It returns the background process ID which on completion calls the notify URL that you have set in the input. File will be available in csv.\n\nWhen no contact matches the filter, no export process is created: the endpoint answers `200` with an empty object instead of `202` with a processId. A recurring export should treat that as \"nothing to do\" rather than as a failure, and must not assume a processId is always present.",
         "operationId": "requestContactExport",
         "requestBody": {
           "content": {
@@ -2032,7 +2032,7 @@
                     "description": "Set the filter for the contacts to be exported.\n",
                     "properties": {
                       "actionForContacts": {
-                        "description": "**Mandatory if neither actionForEmailCampaigns nor actionForSmsCampaigns is passed.** This will export the contacts on the basis of provided action applied on contacts as per the list id. * **allContacts** - Fetch the list of all contacts for a particular list. * **subscribed & unsubscribed** - Fetch the list of subscribed / unsubscribed (blacklisted via any means) contacts for a particular list. * **unsubscribedPerList** - Fetch the list of contacts that are unsubscribed from a particular list only.\n",
+                        "description": "**Mandatory if neither actionForEmailCampaigns nor actionForSmsCampaigns is passed.** This will export the contacts on the basis of the provided action, restricted to the contacts selected by the other filters below. * **allContacts** - Fetch all the selected contacts. * **subscribed & unsubscribed** - Fetch the subscribed / unsubscribed (blacklisted via any means) contacts among the selected contacts. * **unsubscribedPerList** - Fetch the contacts that are unsubscribed from the given listId only; this action requires listId.\n\nThe selection must be narrowed by at least one of **listId**, **segmentId**, **modifiedSince** or **createdSince**. Any of them can be combined with the action, so for example `unsubscribed` together with `modifiedSince` exports the contacts that are currently blocklisted and were modified after the given date-time, with no list or segment involved.\n",
                         "enum": [
                           "allContacts",
                           "subscribed",
@@ -2063,6 +2063,12 @@
                         ],
                         "type": "string"
                       },
+                      "createdSince": {
+                        "description": "Considered only if **actionForContacts** is passed, ignored otherwise. Exports only the contacts created after the given date-time. The value must be a full RFC 3339 date-time: a date-only value such as `2026-10-01` is rejected, and so is a value without a timezone, so pass either the `Z` suffix or an explicit `+HH:MM` offset.\n",
+                        "example": "2026-10-01T00:00:00.000Z",
+                        "format": "date-time",
+                        "type": "string"
+                      },
                       "emailCampaignId": {
                         "description": "Considered only if **actionForEmailCampaigns** is passed, ignored otherwise. **Mandatory if action is one of the following - openers, nonOpeners, clickers, nonClickers, unsubscribed.** The id of the email campaign for which the corresponding action shall be applied in the filter.\n",
                         "example": 12,
@@ -2070,13 +2076,19 @@
                         "type": "integer"
                       },
                       "listId": {
-                        "description": "ID of the list. This is mandatory if actionForContacts is specified and segmentId is not provided. Either segmentId or listId must be included.\n",
+                        "description": "ID of the list. Considered only if **actionForContacts** is passed. At least one of listId, segmentId, modifiedSince or createdSince must be provided; listId and segmentId cannot be used together.\n",
                         "example": 2,
                         "format": "int64",
                         "type": "integer"
                       },
+                      "modifiedSince": {
+                        "description": "Considered only if **actionForContacts** is passed, ignored otherwise. Exports only the contacts modified after the given date-time. The value must be a full RFC 3339 date-time: a date-only value such as `2026-10-01` is rejected, and so is a value without a timezone, so pass either the `Z` suffix or an explicit `+HH:MM` offset. Note that a contact's modification date changes on any update, not only on a subscription change.\n",
+                        "example": "2026-10-01T00:00:00.000Z",
+                        "format": "date-time",
+                        "type": "string"
+                      },
                       "segmentId": {
-                        "description": "ID of the segment. This is mandatory if actionForContacts is specified and listId is not provided. Either segmentId or listId must be included.\n",
+                        "description": "ID of the segment. Considered only if **actionForContacts** is passed. At least one of listId, segmentId, modifiedSince or createdSince must be provided; listId and segmentId cannot be used together.\n",
                         "example": 2,
                         "format": "int64",
                         "type": "integer"
