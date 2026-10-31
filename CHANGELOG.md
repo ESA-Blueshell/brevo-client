@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ESA-Blueshell/brevo-client/compare/v1.2.0...v1.3.0) (2026-10-31)
+
+
+### Features
+
+* **spec:** regenerate Brevo client for new upstream spec surface ([#65](https://github.com/ESA-Blueshell/brevo-client/issues/65)) ([f2e5404](https://github.com/ESA-Blueshell/brevo-client/commit/f2e540405528e28853f2aa9b8ab77161f2fdc47b))
+
 ## [1.2.0](https://github.com/ESA-Blueshell/brevo-client/compare/v1.1.1...v1.2.0) (2026-10-16)
 
 
