@@ -3068,6 +3068,11 @@ export type SendTransacEmailData = {
              *
              */
             name?: string;
+            /**
+             * Pass `true` to send the recipient in bcc no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.
+             *
+             */
+            removeTrackingPixel?: boolean;
         }>;
         /**
          * Array of CC recipient objects. Each object contains an email address and an optional name.
@@ -3088,6 +3093,11 @@ export type SendTransacEmailData = {
              *
              */
             name?: string;
+            /**
+             * Pass `true` to send the recipient in cc no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.
+             *
+             */
+            removeTrackingPixel?: boolean;
         }>;
         /**
          * Custom email headers (non-standard headers) to include in the email. The `sender.ip` header can be set to specify the IP address used for sending transactional emails (dedicated IP users only). Header names must use Title-Case-Format (words separated by hyphens with the first letter of each word capitalized). Headers not in this format are automatically converted. Standard email headers are not supported. Example: `{"sender.ip":"1.2.3.4", "X-Mailin-custom":"some_custom_value", "IdempotencyKey":"abc-123"}`
@@ -3125,6 +3135,11 @@ export type SendTransacEmailData = {
                  *
                  */
                 name?: string;
+                /**
+                 * Pass `true` to send the recipient in bcc no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.
+                 *
+                 */
+                removeTrackingPixel?: boolean;
             }>;
             /**
              * Array of CC recipient objects. Each object contains an email address and an optional name.
@@ -3145,6 +3160,11 @@ export type SendTransacEmailData = {
                  *
                  */
                 name?: string;
+                /**
+                 * Pass `true` to send the recipient in cc no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.
+                 *
+                 */
+                removeTrackingPixel?: boolean;
             }>;
             /**
              * HTML body content of the email. Required when `templateId` is not provided. Ignored when `templateId` is provided.
@@ -3202,6 +3222,11 @@ export type SendTransacEmailData = {
                  *
                  */
                 name?: string;
+                /**
+                 * Pass `true` to send the recipient no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.
+                 *
+                 */
+                removeTrackingPixel?: boolean;
             }>;
         }>;
         /**
@@ -3286,6 +3311,11 @@ export type SendTransacEmailData = {
              *
              */
             name?: string;
+            /**
+             * Pass `true` to send the recipient no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.
+             *
+             */
+            removeTrackingPixel?: boolean;
         }>;
     };
     path?: never;
