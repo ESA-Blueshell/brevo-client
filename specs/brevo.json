@@ -5464,6 +5464,11 @@
                           "description": "Display name of the BCC recipient. Maximum length is 70 characters.\n",
                           "example": "Helen",
                           "type": "string"
+                        },
+                        "removeTrackingPixel": {
+                          "description": "Pass `true` to send the recipient in bcc no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.\n",
+                          "example": false,
+                          "type": "boolean"
                         }
                       },
                       "required": [
@@ -5492,6 +5497,11 @@
                           "description": "Display name of the CC recipient. Maximum length is 70 characters.\n",
                           "example": "Ann",
                           "type": "string"
+                        },
+                        "removeTrackingPixel": {
+                          "description": "Pass `true` to send the recipient in cc no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.\n",
+                          "example": false,
+                          "type": "boolean"
                         }
                       },
                       "required": [
@@ -5539,6 +5549,11 @@
                                 "description": "Display name of the BCC recipient. Maximum length is 70 characters.\n",
                                 "example": "Helen",
                                 "type": "string"
+                              },
+                              "removeTrackingPixel": {
+                                "description": "Pass `true` to send the recipient in bcc no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.\n",
+                                "example": false,
+                                "type": "boolean"
                               }
                             },
                             "required": [
@@ -5567,6 +5582,11 @@
                                 "description": "Display name of the CC recipient. Maximum length is 70 characters.\n",
                                 "example": "Ann",
                                 "type": "string"
+                              },
+                              "removeTrackingPixel": {
+                                "description": "Pass `true` to send the recipient in cc no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.\n",
+                                "example": false,
+                                "type": "boolean"
                               }
                             },
                             "required": [
@@ -5639,6 +5659,11 @@
                                 "description": "Display name of the recipient. Maximum length is 70 characters.\n",
                                 "example": "Jimmy",
                                 "type": "string"
+                              },
+                              "removeTrackingPixel": {
+                                "description": "Pass `true` to send the recipient no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.\n",
+                                "example": false,
+                                "type": "boolean"
                               }
                             },
                             "required": [
@@ -5757,6 +5782,11 @@
                           "description": "Display name of the recipient. Maximum length is 70 characters.\n",
                           "example": "Jimmy",
                           "type": "string"
+                        },
+                        "removeTrackingPixel": {
+                          "description": "Pass `true` to send the recipient no open pixel, so no open is recorded for them, not even in aggregate statistics. Only available to Enterprise plans: for other accounts the field is accepted but ignored. Considered only if the recipient is not tracked: `contactPixelTrackingConsent` is `false`, or not passed and your account does not track unknown-consent contacts. Click tracking is unchanged. If `false` or not passed, the open pixel is added as usual. A value other than `true`/`false` is rejected.\n",
+                          "example": false,
+                          "type": "boolean"
                         }
                       },
                       "required": [
