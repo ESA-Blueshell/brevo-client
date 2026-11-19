@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/ESA-Blueshell/brevo-client/compare/v1.3.0...v1.3.1) (2026-11-19)
+
+
+### Bug Fixes
+
+* **spec:** refresh Brevo client from upstream spec ([#68](https://github.com/ESA-Blueshell/brevo-client/issues/68)) ([66bf892](https://github.com/ESA-Blueshell/brevo-client/commit/66bf892f147f773afd2d283c0836b583f28f9521))
+
 ## [1.3.0](https://github.com/ESA-Blueshell/brevo-client/compare/v1.2.0...v1.3.0) (2026-10-31)
 
 
