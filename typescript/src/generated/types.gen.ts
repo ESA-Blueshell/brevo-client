@@ -1482,6 +1482,8 @@ export type GetFolderListsResponse = GetFolderListsResponses[keyof GetFolderList
 export type ImportContactsData = {
     /**
      * Values to import contacts in Brevo. To know more about the expected format, please have a look at ``https://help.brevo.com/hc/en-us/articles/209499265-Build-contacts-lists-for-your-email-marketing-campaigns``
+     *
+     * <Note>Contacts with a matching `EXT_ID` are updated as usual. If the `EXT_ID` in your file or `jsonBody` is new and the email belongs to a contact with no `EXT_ID`, that contact is replaced by a new one with a new contact ID, and its email history is lost. Its blocklist status can also be reset. To keep history, identify contacts by email or contact ID.</Note>
      */
     body: {
         /**
